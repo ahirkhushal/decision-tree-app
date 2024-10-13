@@ -1,6 +1,17 @@
+interface SendSMSActionParams {
+  phoneNumber: string;
+}
+
+interface SendEmailActionParams {
+  sender: string;
+  receiver: string;
+}
+
+type ActionParams = SendSMSActionParams | SendEmailActionParams;
+
 interface Action {
-  type: string;
-  params: any;
+  type: "send_sms" | "send_email"; // List of possible actions
+  params: ActionParams;
   nextAction?: Action;
 }
 
@@ -92,11 +103,13 @@ export class DecisionTree {
 
     switch (action.type) {
       case "send_sms":
-        console.log(`Sending SMS to: ${action.params.phoneNumber}`);
+        const smsParams = action.params as SendSMSActionParams;
+        console.log(`Sending SMS to: ${smsParams.phoneNumber}`);
         break;
       case "send_email":
+        const emailParams = action.params as SendEmailActionParams;
         console.log(
-          `Sending Email from: ${action.params.sender} to: ${action.params.receiver}`
+          `Sending Email from: ${emailParams.sender} to: ${emailParams.receiver}`
         );
         break;
       default:
