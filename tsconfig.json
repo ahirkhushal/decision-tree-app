@@ -1,0 +1,43 @@
+// {
+//   "compilerOptions": {
+//     "target": "ES2015",
+//     "module": "commonjs",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true,
+//     "lib": ["ES2015", "DOM"]
+//   }
+// }
+
+// {
+//   "name": "test",
+//   "version": "1.0.0",
+//   "main": "index.js",
+//   "scripts": {
+//     "build": "tsc",
+//     "start": "nodemon decisionTree.js"
+//   },
+//   "author": "",
+//   "license": "ISC",
+//   "description": "",
+//   "devDependencies": {
+//     "@types/express": "^5.0.0",
+//     "@types/node": "^22.7.5"
+//   },
+//   "dependencies": {
+//     "express": "^4.21.1"
+//   }
+// }
+
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["ES2015", "DOM"],
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*.ts"]
+}
